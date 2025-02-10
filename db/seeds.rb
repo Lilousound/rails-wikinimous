@@ -8,14 +8,12 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-# Faker::Quotes::Shakespeare.hamlet_quote
-# Faker::Games::WorldOfWarcraft.race
-
 require 'faker'
 puts 'Creating 10 fake articles...'
+Article.destroy_all
 10.times do
   article = Article.new(
-  title: Faker::Games::WorldOfWarcraft.race,
+  title: Faker::Quote.yoda,
   content: Faker::Quotes::Shakespeare.hamlet_quote,
   )
   article.save!

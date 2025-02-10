@@ -1,0 +1,10 @@
+<div class="container mt-3">
+  <h2><%= @article.title %></h2>
+  <p><%= @article.content %></p>
+
+  <div class="d-flex">
+    <h3><%= link_to "🔙", articles_path %></h3>&nbsp &nbsp &nbsp &nbsp
+    <h3><%= link_to "🗑️", article_path(@article),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></h3>
+  </div>
+</div>
